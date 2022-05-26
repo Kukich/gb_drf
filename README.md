@@ -1,6 +1,10 @@
 ###Суперпользователь
 login: django 
 pswd: django
+
+владелец : owner django11
+админ : admin django11
+
 ###Заполнение базы ( с удалением старых данных)
 python manage.py fill_db 
 
