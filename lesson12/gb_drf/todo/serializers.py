@@ -10,8 +10,8 @@ class ProjectModelSerializer(ModelSerializer):
 
 
 class TODOModelSerializer(ModelSerializer):
-    project = ProjectModelSerializer()
-    create_user = MyUsersModelSerializer()
+    projects = ProjectModelSerializer(source='project',read_only=True)
+    create_users = MyUsersModelSerializer(source='create_user',read_only=True)
     class Meta:
         model = TODO
         fields = '__all__'

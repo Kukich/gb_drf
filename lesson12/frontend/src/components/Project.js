@@ -5,7 +5,7 @@ import { useParams,Link } from 'react-router-dom'
 export const ProjectPage = ({project_list}) => {
     let { uid } = useParams();
     console.log(uid);
-    let filtered_items = project_list.filter((item) => item.uid == uid);
+    let filtered_items = project_list.filter((item) => item.uid === uid);
     console.log(filtered_items[0]);
     return (
        <ProjectList project_list={filtered_items} />
@@ -33,7 +33,7 @@ const ProjectItem = ({project}) => {
 
 const ProjectList= ({project_list}) => {
     let h1 = 'list';
-    if(project_list.length == 1){
+    if(project_list.length === 1){
         h1 = project_list[0].uid;
     }
     return (

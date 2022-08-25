@@ -13,4 +13,4 @@ class TODOFilter(filters.FilterSet):
     project = filters.CharFilter(field_name="project", lookup_expr='exact')
     class Meta:
         model = TODO
-        fields = ['date_create_start','date_create_end','project']
+        fields = ['date_create_start','date_create_end','project','is_active']

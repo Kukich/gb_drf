@@ -4,7 +4,7 @@ import {Link } from 'react-router-dom'
 class Menu extends React.Component {
     constructor(props) {
         super(props)
-        console.log(props)
+        this.state={'token':''}
     }
 
     render(){
@@ -15,17 +15,17 @@ class Menu extends React.Component {
             <nav>
                 <ul>
                     <li>
-                        <Link to='/'>MyUsers</Link>
+                        <Link to='/'  target="_top">MyUsers</Link>
                     </li>
                     <li>
-                        <Link to='/projects'>Projects</Link>
+                        <Link to='/projects'  target="_top">Projects</Link>
                     </li>
                     <li>
-                        <Link to='/todos'>TODOs</Link>
+                        <Link to='/todos'  target="_top">TODOs</Link>
                     </li>
                     <li>
-                        {this.is_authenticated() ? <button onClick={()=>this.logout()}>Logout</button> :
-                        <Link to='/login'>Login</Link>}
+                        {this.props.is_authenticated() ? <><div>User: {this.props.name} </div><button onClick={()=>this.props.logout()}>Выйти</button></> :
+                        <Link to='/login'  target="_top">Войти</Link>}
                     </li>
                 </ul>
             </nav>
